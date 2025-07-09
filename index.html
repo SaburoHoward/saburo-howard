@@ -126,29 +126,32 @@
   }
 
 .research-items {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   margin-top: 40px;
 }
 
 .research-item {
+  display: flex;
+  align-items: center;
   background-color: #f3f3f3;
   border-radius: 10px;
   padding: 20px;
-  text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-  margin-bottom: 30px; /* espace entre les blocs */
+}
+
+.research-item-text {
+  flex: 1;
+  padding-right: 20px;
+  text-align: left;
 }
 
 .research-item img {
-  width: 100%;
+  width: 300px; /* ajuste selon tes besoins */
   height: auto;
-  max-width: 100%;
   border-radius: 8px;
-  margin-bottom: 15px;
-}
-
-
-    
+}   
   </style>
 </head>
 <body>
@@ -182,9 +185,11 @@
       <div class="research-items">
       
       <div class="research-item">
-        <pl><strong>A dilute core inside Jupiter</strong><br></pl>
-         <img src="DiluteCore.png" alt="Interior of Jupiter" />
-        <pl2>Contrary to the idea that Jupiter had a dense, compact core at its center, the Juno mission revealed that its core is actually diluted. It was previously thought that most of the heavier elements, like rocks and ices, were concentrated in a dense core, well separated from the surrounding hydrogen and helium envelope. However, thanks to Juno’s extremely precise measurements of Jupiter’s gravitational field, interior models now suggest that these heavier elements are gradually mixed with hydrogen and helium over a large part of the planet. This diffuse structure challenges traditional models of giant planet formation. A key question is the precise extent of the dilute core, which is crucial for reconciling Jupiter’s formation, evolution, and current structure — a topic I have been working on.</pl2>
+        <div class="research-item-text">
+          <pl><strong>A dilute core inside Jupiter</strong><br></pl>
+          <pl2>Contrary to the idea that Jupiter had a dense, compact core at its center, the Juno mission revealed that its core is actually diluted. It was previously thought that most of the heavier elements, like rocks and ices, were concentrated in a dense core, well separated from the surrounding hydrogen and helium envelope. However, thanks to Juno’s extremely precise measurements of Jupiter’s gravitational field, interior models now suggest that these heavier elements are gradually mixed with hydrogen and helium over a large part of the planet. This diffuse structure challenges traditional models of giant planet formation. A key question is the precise extent of the dilute core, which is crucial for reconciling Jupiter’s formation, evolution, and current structure — a topic I have been working on.</pl2>
+        </div>
+        <img src="DiluteCore.png" alt="Interior of Jupiter" />
       </div>
   
       <div class="research-item">
