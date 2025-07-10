@@ -172,26 +172,40 @@
 
 .sidebar-icons {
   display: flex;
-  justify-content: center;
-  gap: 15px;
+  flex-direction: column;
+  gap: 10px;
   margin-top: 20px;
 }
 
-.sidebar-icons img {
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid #ccc;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-  opacity: 0.9;
+.icon-link a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.85em;
+  gap: 10px;
 }
 
-.sidebar-icons img:hover {
+.icon-link img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  opacity: 0.9;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.icon-link img:hover {
   transform: scale(1.1);
   opacity: 1;
-  border-color: #999;
 }
+
+.icon-link span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
     
   </style>
 </head>
@@ -213,15 +227,24 @@
       <a href="#contact">Contact</a>
     </nav>
   <div class="sidebar-icons">
+  <div class="icon-link">
   <a href="https://scholar.google.com/citations?user=Sxdu5gwAAAAJ&hl=en" target="_blank">
     <img src="scholar-logo.png" alt="Google Scholar" />
+    <span>Scholar</span>
   </a>
+  </div>  
+  <div class="icon-link">
   <a href="https://ui.adsabs.harvard.edu/search/p_=0&q=orcid%3A0000-0003-4894-7271&sort=date%20desc%2C%20bibcode%20desc" target="_blank">
     <img src="ads-logo.png" alt="NASA ADS" />
+    <span>NASA/ADS</span>
   </a>
+  </div> 
+  <div class="icon-link">
   <a href="CV-SaburoHoward.pdf" target="_blank">
     <img src="CV-logo.png" alt="CV" />
+    <span>CV</span>
   </a>
+  </div> 
 </div>
   </div>
 
