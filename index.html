@@ -207,6 +207,19 @@
   vertical-align: middle;
   color: white;
 }   
+
+/* COLLAPSABLE SIDEBAR */
+.sidebar.collapsed {
+  width: 60px;
+  padding: 20px 10px;
+}
+
+.sidebar.collapsed h1,
+.sidebar.collapsed p,
+.sidebar.collapsed nav a {
+  display: none;
+}
+    
   </style>
 </head>
 <body>
@@ -428,5 +441,27 @@
     </footer>
   </div>
 
+<button id="toggle-sidebar" style="
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  background-color: #1abc9c;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+">☰</button>
+
+<script>
+  const toggleBtn = document.getElementById("toggle-sidebar");
+  const sidebar = document.querySelector(".sidebar");
+
+  toggleBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("collapsed");
+  });
+</script>
+  
 </body>
 </html>
