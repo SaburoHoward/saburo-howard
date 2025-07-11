@@ -208,16 +208,35 @@
   color: white;
 }   
 
-/* COLLAPSABLE SIDEBAR */
-.sidebar.collapsed {
-  width: 60px;
-  padding: 20px 10px;
+/* --- BOUTON BURGER --- */
+.burger-button {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 24px;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1001;
 }
 
-.sidebar.collapsed h1,
-.sidebar.collapsed p,
-.sidebar.collapsed nav a {
-  display: none;
+/* --- RESPONSIVE (petits écrans) --- */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .burger-button {
+    display: block;
+  }
 }
     
   </style>
@@ -441,25 +460,14 @@
     </footer>
   </div>
 
-<button id="toggle-sidebar" style="
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 1000;
-  background-color: #1abc9c;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-">☰</button>
+<button id="toggleSidebar" class="burger-button">☰</button>
 
 <script>
-  const toggleBtn = document.getElementById("toggle-sidebar");
-  const sidebar = document.querySelector(".sidebar");
+  const toggleBtn = document.getElementById('toggleSidebar');
+  const sidebar = document.querySelector('.sidebar');
 
-  toggleBtn.addEventListener("click", () => {
-    sidebar.classList.toggle("collapsed");
+  toggleBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
   });
 </script>
   
